@@ -7,6 +7,15 @@
  * Date: 2014-05-01T17:11Z
  */
 (function( $ ) {
+    $(".upload-kit-item").live("mouseleave", function() {
+        var $items = $(".upload-kit-item");
+        var i = 1;
+        $items.each(function () {
+            $(this).find('input[data-role=order]').val(i);
+            i++;
+        });
+    });
+
     jQuery.fn.yiiUploadKit = function(options) {
         var $input = this;
         var $container = $input.parent('div');
