@@ -16,13 +16,20 @@ class UploadAsset extends AssetBundle
         'trntv\filekit\widget\BlueimpFileuploadAsset'
     ];
 
-    public $sourcePath = __DIR__ . '/assets';
-    
-    public $css = [
-        YII_DEBUG ? 'css/upload-kit.css' : 'css/upload-kit.min.css'
-    ];
+    public $sourcePath;
+    public $css;
+    public $js;
 
-    public $js = [
-        YII_DEBUG ? 'js/upload-kit.js' : 'js/upload-kit.min.js'
-    ];
+    public function init()
+    {
+        parent::init();
+
+        $this->sourcePath = __DIR__ . '/assets';
+        $this->css = [
+            YII_DEBUG ? 'css/upload-kit.css' : 'css/upload-kit.min.css'
+        ];
+        $this->js = [
+            YII_DEBUG ? 'js/upload-kit.js' : 'js/upload-kit.min.js'
+        ];
+    }
 }
